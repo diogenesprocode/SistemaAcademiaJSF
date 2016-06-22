@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:head>
+        <title>Facelet Title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />	
+	<script	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" />
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/base/jquery-ui.css" type="text/css" />
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/cupertino/jquery-ui.css" type="text/css" />
+        
+        
+    </h:head>
+    <h:body>
+        <script language="JavaScript">  
+		$(document).ready(function() {
+			//jQuery('#datatable').tablePagination();
+			alert('teste');
+			
+		});
+	</script>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="west" header="Menu" collapsible="true" resizable="false" size="220">
+                <h:form>
+                    <p:growl autoUpdate="true"/>
+                    <p:panelMenu style="width: 210px" >
+                        <p:submenu label="Clientes" style="width: 210px">
+                            <p:menuitem value="Cadastrar" actionListener="#{menuView.cadastrarClientes}" icon="ui-icon-disk" />
+                            <p:menuitem value="Consultar" actionListener="#{menuView.consultClientes}"  icon="ui-icon-arrowrefresh-1-w" />
+                        </p:submenu>
+                        <p:submenu label="Modalidades" style="width: 210px">
+                            <p:menuitem value="Cadastrar" actionListener="#{menuView.cadModalidade()}" icon="ui-icon-disk" />
+                            <p:menuitem value="Consultar" actionListener="#{menuView.consultModalidade()}"  icon="ui-icon-arrowrefresh-1-w" />
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+            </p:layoutUnit>
+            <div id="content">
+            </div>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="center">
+                    <ui:include src="#{menuView.pagina}"/>
+                </ui:insert>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+
