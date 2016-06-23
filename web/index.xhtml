@@ -6,34 +6,21 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     
     <h:head>
-        <title>Facelet Title</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />	
-	<script	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" />
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/base/jquery-ui.css" type="text/css" />
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/cupertino/jquery-ui.css" type="text/css" />
-        
-        
+        <title>Facelet Title</title>        
     </h:head>
     <h:body>
-        <script language="JavaScript">  
-		$(document).ready(function() {
-			//jQuery('#datatable').tablePagination();
-			alert('teste');
-			
-		});
-	</script>
         <p:layout fullPage="true">
             <p:layoutUnit position="west" header="Menu" collapsible="true" resizable="false" size="220">
                 <h:form>
                     <p:growl autoUpdate="true"/>
                     <p:panelMenu style="width: 210px" >
                         <p:submenu label="Clientes" style="width: 210px">
-                            <p:menuitem value="Cadastrar" actionListener="#{menuView.cadastrarClientes}" icon="ui-icon-disk" />
-                            <p:menuitem value="Consultar" actionListener="#{menuView.consultClientes}"  icon="ui-icon-arrowrefresh-1-w" />
+                            <p:menuitem value="Cadastrar" outcome="cadastrarCliente.xhtml" icon="ui-icon-disk" />
+                            <p:menuitem value="Consultar" outcome="listarCliente.xhtml"  icon="ui-icon-arrowrefresh-1-w" />
                         </p:submenu>
                         <p:submenu label="Modalidades" style="width: 210px">
-                            <p:menuitem value="Cadastrar" actionListener="#{menuView.cadModalidade()}" icon="ui-icon-disk" />
-                            <p:menuitem value="Consultar" actionListener="#{menuView.consultModalidade()}"  icon="ui-icon-arrowrefresh-1-w" />
+                            <p:menuitem value="Cadastrar" outcome="cadastrarModalidade.xhtml" icon="ui-icon-disk" />
+                            <p:menuitem value="Consultar" outcome="listarModalidade.xhtml"  icon="ui-icon-arrowrefresh-1-w" />
                         </p:submenu>
                     </p:panelMenu>
                 </h:form>
